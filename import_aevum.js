@@ -10,7 +10,7 @@ export async function main(ns) {
   let filesImported = await importFiles(ns);
   if (filesImported) {
     ns.tprint('Successfully Imported Files');
-    await ns.wget(`${config.rootUrl}aevum_import.js`, 'aevum_import.js');
+    await ns.wget(`${config.rootUrl}import_aevum.js`, 'import_aevum.js');
   } else {
     ns.tprint('Something failed, check files and paths');
   }
