@@ -1,5 +1,4 @@
-import { getFolder, getServerPrefix } from 'import_aevum.js';
-import { serverValue } from `$getFolder()/utils.js`;
+import { getFolder, getServerPrefix, serverValue } from 'import_aevum.js';
 
 export async function main(ns) {
   let servers = await ns.read('allServers.txt');
