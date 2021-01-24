@@ -5,11 +5,10 @@ export async function main(ns) {
   servers = servers.split(';');
   var doLoop = true;
 
-  var minSecWeight = 100;
   var lastTarget = [];
   while (doLoop) {
-    for (var server of servers) {
-      server = server.split(',');
+    for (var i = 0; i < servers.length, i++) {
+      var server = servers[i].split(',');
       // Only consider targets we have root on first
       if (await ns.hasRootAccess(server[0])) {
         var target = server[0];
@@ -22,11 +21,15 @@ export async function main(ns) {
         if (lastTarget.length == 0) {
           shouldSwitchTargets = true;
         } else {
+          ns.tprint(`Last Value: ${serverValue(lastTarget)} Current Value: ${serverValue(server)}`);
           shouldSwitchTargets = serverValue(lastTarget) < serverValue(server);
         }
         if (shouldSwitchTargets) {
           ns.tprint('Switching Targets');
+          // Run Hack/Etc script here
+          lastTarget = server;
         }
+        servers.splice(i, 1);
       }
     }
     doLoop = (servers.length > 0);
