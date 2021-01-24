@@ -7,7 +7,7 @@ export async function main(ns) {
 
   var lastTarget = [];
   while (doLoop) {
-    for (var i = 0; i < servers.length, i++) {
+    for (var i = 0; i < servers.length; i++) {
       var server = servers[i].split(',');
       // Only consider targets we have root on first
       if (await ns.hasRootAccess(server[0])) {
