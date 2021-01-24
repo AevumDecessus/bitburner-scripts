@@ -1,9 +1,9 @@
 import { getFolder, getServerPrefix } from 'import_aevum.js';
 
-let doLoop = true;
-let servers = [];
-let scanArray = ['home'];
-let currentScanLength = 0;
+var doLoop = true;
+var servers = [];
+var scanArray = ['home'];
+var currentScanLength = 0;
 
 export async function main(ns) {
   while (doLoop) {
