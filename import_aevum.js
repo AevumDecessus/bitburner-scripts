@@ -23,6 +23,7 @@ async function importFiles(ns) {
     'aevumWeaken.js',
     'spider.js',
     'targeter.js',
+    'utils.js',
     ];
   let filesImported = true;
   for (let file of files) {
