@@ -7,10 +7,10 @@ let config = {
  * Imports all files from github $rootUrl, stores them in $folder
  */
 export async function main(ns) {
+  await ns.wget(`${config.rootUrl}import_aevum.js`, 'import_aevum.js');
   let filesImported = await importFiles(ns);
   if (filesImported) {
     ns.tprint('Successfully Imported Files');
-    await ns.wget(`${config.rootUrl}import_aevum.js`, 'import_aevum.js');
   } else {
     ns.tprint('Something failed, check files and paths');
   }
