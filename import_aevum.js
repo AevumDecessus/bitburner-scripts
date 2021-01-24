@@ -23,7 +23,6 @@ async function importFiles(ns) {
     'aevumWeaken.js',
     'spider.js',
     'targeter.js',
-    'utils.js',
     ];
   let filesImported = true;
   for (let file of files) {
@@ -41,3 +40,9 @@ export function getFolder() {
 export function getServerPrefix() {
   return config.serverPrefix;
 }
+
+export function serverValue(ns, server) {
+  var securityWeight = 100;
+  return server[3] * (securityWeight / server[5]);
+}
+
