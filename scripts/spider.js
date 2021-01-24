@@ -31,9 +31,9 @@ export async function main(ns) {
           scanArray.push(host);
         }
       }
-      if (currentScanLength == scanArray.length) {
-        doLoop = false;
-      }
+    }
+    if (currentScanLength == scanArray.length) {
+      doLoop = false;
     }
   }
   await ns.write('allServers.txt', servers.join(';'), 'w');
