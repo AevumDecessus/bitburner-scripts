@@ -20,8 +20,9 @@ async function importFiles(ns) {
   let files = [
     'aevumGrow.js',
     'aevumHack.js',
-    'aevumWeaken.js'
-      ];
+    'aevumWeaken.js',
+    'spider.js'
+    ];
   let filesImported = true;
   for (let file of files) {
     let remoteFileName = `${config.rootUrl}scripts/${file}`;
