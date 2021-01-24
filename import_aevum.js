@@ -41,7 +41,7 @@ export function getServerPrefix() {
   return config.serverPrefix;
 }
 
-export function serverValue(ns, server) {
+export function serverValue(server) {
   var securityWeight = 100;
   return server[3] * (securityWeight / server[5]);
 }
