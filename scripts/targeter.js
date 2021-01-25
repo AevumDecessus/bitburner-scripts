@@ -25,7 +25,7 @@ export async function main(ns) {
           shouldSwitchTargets = serverValue(lastTarget) < serverValue(server);
         }
         if (shouldSwitchTargets) {
-          ns.tprint('Switching Targets. New Target ${server[0]}');
+          ns.tprint(`Switching Targets. New Target ${server[0]}`);
           // Run Hack/Etc script here
           lastTarget = server;
         }
