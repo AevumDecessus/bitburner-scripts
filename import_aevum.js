@@ -21,6 +21,7 @@ async function importFiles(ns) {
     'aevumGrow.js',
     'aevumHack.js',
     'aevumWeaken.js',
+    'rootAll.js',
     'spider.js',
     'targeter.js',
     ];
