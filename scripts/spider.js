@@ -38,6 +38,6 @@ export async function main(ns) {
   }
   await ns.write('allServers.txt', servers.join(';'), 'w');
   if (await ns.getHostname() == 'home') {
-    await ns.exec(`${getFolder()}/rootAll.js);
+    await ns.exec(`${getFolder()}/rootAll.js`, 'home');
   }
 }
