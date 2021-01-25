@@ -1,10 +1,10 @@
-var programs = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe', 'HTTPWorm.exe', 'SQLInject.exe']
-var allServers = read('allServers.txt');
-allServers = allServers.split(';');
-var allServersLength = allServers.length;
-var doLoop = true;
+import { getFolder, getServerPrefix } from 'import_aevum.js';
 
 export async function main(ns) {
+  var programs = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe', 'HTTPWorm.exe', 'SQLInject.exe']
+  var allServers = await ns.read('allServers.txt');
+  allServers = allServers.split(';');
+  var doLoop = true;
   while (doLoop) {
     var currentHackLevel = await ns.getHackingLevel();
     var currentOpenPortSoftware = 0;
