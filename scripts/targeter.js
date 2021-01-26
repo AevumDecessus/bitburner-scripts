@@ -1,6 +1,7 @@
 import { getFolder, getServerPrefix, serverValue } from 'import_aevum.js';
 
 export async function main(ns) {
+  await ns.disableLog('ALL');
   let servers = await ns.read('allServers.txt');
   servers = servers.split(';');
   var doLoop = true;
@@ -21,21 +22,19 @@ export async function main(ns) {
         if (lastTarget.length == 0) {
           shouldSwitchTargets = true;
         } else {
-          //ns.tprint(`Last Value: ${serverValue(lastTarget)} Current Value: ${serverValue(server)}`);
           shouldSwitchTargets = serverValue(lastTarget) < serverValue(server);
         }
         if (shouldSwitchTargets) {
           ns.tprint(`Switching Targets. New Target ${server[0]}`);
+          ns.print(`Switching Targets. New Target ${server[0]}`);
           // Run Hack/Etc script here
           lastTarget = server;
         }
-        ns.tprint(`Removing ${server[0]}`);
+        ns.print(`Removing ${server[0]} from target list`);
         servers.splice(i, 1);
       }
     }
     doLoop = (servers.length > 0);
     await ns.sleep(1000);
-    //Force exit the loop for now
-    doLoop = false
   }
 }

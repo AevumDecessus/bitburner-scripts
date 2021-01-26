@@ -1,6 +1,7 @@
 import { getFolder, getServerPrefix } from 'import_aevum.js';
 
 export async function main(ns) {
+  await ns.disableLog('ALL');
   var programs = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe', 'HTTPWorm.exe', 'SQLInject.exe']
   var allServers = await ns.read('allServers.txt');
   allServers = allServers.split(';');
@@ -29,13 +30,15 @@ export async function main(ns) {
             }
           }
           await ns.nuke(server[0]);
+          ns.print(`Rooted server ${server[0]}`); 
           allServers.splice(n, 1);
         } else {
+          ns.print(`Server ${server[0]} already rooted, no longer iterating`);
           allServers.splice(n, 1);
         }
       }
     }
-    doLoop = allServers.length = 0;
+    doLoop = (allServers.length > 0);
     await ns.sleep(1000);
   }
 }
