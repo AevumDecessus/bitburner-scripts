@@ -17,7 +17,7 @@ export async function main(ns) {
     for (var n = 0; n < allServers.length; n++) {
       //hostName, numPorts, hackingLevel, maxMoney, growthRate, minSecurity, RAM
       //    //0         1         2             3         4           5            6
-      server = allServers[n].split(',');
+      var server = allServers[n].split(',');
       if (server[2] <= currentHackLevel && server[1] <= currentOpenPortSoftware) {
         if (!await ns.hasRootAccess(server[0])) {
           for (var j = 0; j < programs.length; j++) {
