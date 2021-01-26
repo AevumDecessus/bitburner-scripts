@@ -6,6 +6,7 @@ var scanArray = ['home'];
 var currentScanLength = 0;
 
 export async function main(ns) {
+  await ns.disableLog('ALL');
   while (doLoop) {
     var previousScanLength = currentScanLength;
     currentScanLength = scanArray.length;
@@ -38,6 +39,6 @@ export async function main(ns) {
   }
   await ns.write('allServers.txt', servers.join(';'), 'w');
   if (await ns.getHostname() == 'home') {
-    await ns.exec(`${getFolder()}/rootAll.js`, 'home');
+    await ns.exec(`/${getFolder()}/rootAll.js`, 'home');
   }
 }
