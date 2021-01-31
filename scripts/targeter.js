@@ -29,6 +29,13 @@ export async function main(ns) {
         if (shouldSwitchTargets) {
           ns.tprint(`Switching Targets. New Target ${server[0]}`);
           ns.print(`Switching Targets. New Target ${server[0]}`);
+          await ns.kill('brainMain.js', 'home', `${lastTarget[0]}`);
+          await ns.kill('brainHack.js', 'home', `${lastTarget[0]}`);
+          await ns.kill('brainGrow.js', 'home', `${lastTarget[0]}`);
+          await ns.kill('brainWeaken.js', 'home', `${lastTarget[0]}`);
+          await ns.exec('killAll.js', 'home');
+          await ns.sleep(5000);
+          ns.run('brainMain.js', 1,`${server[0]}`)
           // Run Hack/Etc script here
           lastTarget = server;
         }
