@@ -35,7 +35,7 @@ export async function main(ns) {
       myMoney -= 25000000;
     }
     await ns.sleep(1000);
-    doLoop = killLoop();
+    doLoop = await killLoop();
   }
 }
 
