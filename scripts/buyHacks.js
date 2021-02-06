@@ -39,11 +39,11 @@ export async function main(ns) {
   }
 }
 
-function killLoop() {
-  var kill = ns.fileExists('brutessh.exe', 'home');
-  kill = (kill && ns.fileExists('ftpcrack.exe', 'home'));
-  kill = (kill && ns.fileExists('httpworm.exe', 'home'));
-  kill = (kill && ns.fileExists('relaysmtp.exe', 'home'));
-  kill = (kill && ns.fileExists('sqlinject.exe', 'home'));
-  return kill;
+async function killLoop() {
+  var kill = await ns.fileExists('brutessh.exe', 'home');
+  kill = (kill && await ns.fileExists('ftpcrack.exe', 'home'));
+  kill = (kill && await ns.fileExists('httpworm.exe', 'home'));
+  kill = (kill && await ns.fileExists('relaysmtp.exe', 'home'));
+  kill = (kill && await ns.fileExists('sqlinject.exe', 'home'));
+  return !kill;
 }
