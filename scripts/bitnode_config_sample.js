@@ -34,7 +34,7 @@ export function node_three_level() {
 }
 export function node_four_level() {
   if (current_bitnode == 4) { 
-    return 3 
+    return 3; 
   } else {
     return bitnode_levels.four;
   }
