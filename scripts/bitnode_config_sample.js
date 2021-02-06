@@ -13,35 +13,71 @@ let bitnode_levels = {
   twelve: "0",
 };
 
+let current_bitnode = 1;
+
 export function node_one_level() {
   return bitnode_levels.one;
 }
 export function node_two_level() {
-  return bitnode_levels.two;
+  if (current_bitnode == 2) {
+    return 3;
+  } else {
+    return bitnode_levels.two;
+  }
 }
 export function node_three_level() {
-  return bitnode_levels.three;
+  if (current_bitnode == 3) {
+    return 3;
+  } else {
+    return bitnode_levels.three;
+  }
 }
 export function node_four_level() {
-  return bitnode_levels.four;
+  if (current_bitnode == 4) { 
+    return 3 
+  } else {
+    return bitnode_levels.four;
+  }
 }
+// Bitnode 5 is special, it unlocks
+// getBitNodeMultipliers only AFTER
+// you get level one of the source
+// file
 export function node_five_level() {
   return bitnode_levels.five;
 }
+// Bitnode 6 lets you access bladeburners
+// but NOT the bladeburner API
 export function node_six_level() {
   return bitnode_levels.six;
 }
 export function node_seven_level() {
-  return bitnode_levels.seven;
+  if (current_node == 7) {
+    return 3;
+  } else {
+    return bitnode_levels.seven;
+  }
 }
 export function node_eight_level() {
-  return bitnode_levels.eight;
+  if (current_node == 8) {
+    return 3;
+  } else {
+    return bitnode_levels.eight;
+  }
 }
 export function node_nine_level() {
-  return bitnode_levels.nine;
+  if (current_node == 9) {
+    return 3;
+  } else {
+    return bitnode_levels.nine;
+  }
 }
 export function node_ten_level() {
-  return bitnode_levels.ten;
+  if (current_node == 10) {
+    return 3;
+  } else {
+    return bitnode_levels.ten;
+  }
 }
 export function node_eleven_level() {
   return bitnode_levels.eleven;
