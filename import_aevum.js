@@ -16,7 +16,7 @@ export async function main(ns) {
   }
   if (await !ns.fileExists(`/${getFolder()}/bitnode_config.js`)) {
     if (await ns.fileExists(`/${getFolder()}/bitnode_config_sample.js`)) {
-      data = await ns.read(`/${getFolder()}/bitnode_config_sample.js`);
+      var data = await ns.read(`/${getFolder()}/bitnode_config_sample.js`);
       await ns.write(`/${getFolder()}/bitnode_config.js`, data, "w")
     }
   }
