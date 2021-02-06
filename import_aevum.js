@@ -27,6 +27,7 @@ async function importFiles(ns) {
     'aevumGrow.js',
     'aevumHack.js',
     'aevumWeaken.js',
+    'buyHacks.js',
     'bitnode_config_sample.js',
     'rootAll.js',
     'spider.js',
