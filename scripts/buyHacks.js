@@ -40,10 +40,10 @@ export async function main(ns) {
 }
 
 async function killLoop() {
-  var kill = await ns.fileExists('brutessh.exe', 'home');
-  kill = (kill && await ns.fileExists('ftpcrack.exe', 'home'));
-  kill = (kill && await ns.fileExists('httpworm.exe', 'home'));
-  kill = (kill && await ns.fileExists('relaysmtp.exe', 'home'));
-  kill = (kill && await ns.fileExists('sqlinject.exe', 'home'));
-  return !kill;
+  var ssh = await ns.fileExists('brutessh.exe', 'home');
+  var ftp =  await ns.fileExists('ftpcrack.exe', 'home');
+  var http = await ns.fileExists('httpworm.exe', 'home');
+  var relay = await ns.fileExists('relaysmtp.exe', 'home');
+  var sql = await ns.fileExists('sqlinject.exe', 'home');
+  return !(ssh && ftp && http && relay && sql);
 }
